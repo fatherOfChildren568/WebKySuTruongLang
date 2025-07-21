@@ -532,11 +532,14 @@ body {
   }
   .about-section, .confession-card {
     background: #23233a;
-    color: #e5e7eb;
+    color: #f3f6fa;
     box-shadow: 0 4px 32px #00baff11;
   }
-  .confession-card h4, .about-section h3, .confession-cards-title, .group-name, .footer-title {
+  .about-section h3, .confession-cards-title, .group-name, .footer-title {
     color: #fff;
+  }
+  .about-section ul, .about-section li, .confession-card ul, .confession-card li, .confession-card p, .intro-section p, .group-slogan {
+    color: #f3f6fa;
   }
   .confession-link, .confession-btn {
     background: linear-gradient(90deg, #00baff 0%, #4f8cff 100%);
@@ -556,11 +559,18 @@ body {
     color: #b3c2e0;
     border-top: 1px solid #23233a;
   }
-  .footer-links a {
-    color: #b3c2e0;
+  .footer-info, .footer-links, .footer-links li, .footer-links a {
+    color: #f3f6fa;
   }
   .footer-links a:hover {
     color: #00baff;
+  }
+  .footer-info a {
+    color: #00baff;
+  }
+  .footer-info a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
   .cursor-dot {
     background: rgba(0,186,255,0.32);
@@ -569,5 +579,8 @@ body {
   .cursor-dot.cursor-hover {
     background: #fff;
     box-shadow: 0 0 40px 12px #00baffcc;
+  }
+  .intro-section h2 {
+    color: #fff;
   }
 } 
