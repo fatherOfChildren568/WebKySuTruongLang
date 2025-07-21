@@ -720,14 +720,12 @@ body {
     margin: 0 !important;
   }
   .confession-card, .featured-story-card {
-    display: block !important;
     width: 92vw !important;
     max-width: 400px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 18px !important;
-    margin-bottom: 18px !important;
-    box-sizing: border-box;
+    margin: 18px auto !important;
+    float: none !important;
+    box-sizing: border-box !important;
+    display: block !important;
   }
 }
 
@@ -803,20 +801,75 @@ body {
 
 @media (max-width: 700px) {
   .header-bg.modern-header {
-    width: 100% !important;
-    min-width: 100% !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    left: unset !important;
-    right: unset !important;
     position: sticky !important;
     top: 0 !important;
-  }
-  .container.header-flex {
-    width: 100% !important;
-    max-width: 100% !important;
+    z-index: 1000 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+  .container.header-flex {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .confession-cards-section, .featured-stories-section, .about-section, .intro-section {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  .confession-cards-grid, .featured-stories-grid {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .confession-card, .featured-story-card {
+    width: 92vw;
+    max-width: 400px;
+    margin: 18px auto;
+    float: none;
+    box-sizing: border-box;
+    display: block;
+  }
+} 
+
+@media (max-width: 700px) {
+  .featured-story-card, .confession-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+  }
+} 
+
+@media (max-width: 700px) {
+  .confession-card, .featured-story-card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 92vw;
+    max-width: 400px;
+    display: block;
+    float: none;
   }
 } 
