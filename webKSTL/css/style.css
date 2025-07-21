@@ -10,6 +10,7 @@ body {
   background: #f7f8fa;
   color: #222;
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* --- CONTAINER --- */
@@ -36,6 +37,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 .header-flex {
   display: flex;
@@ -513,4 +515,59 @@ body {
 }
 @media (max-width: 900px) {
   .cursor-dot { display: none; }
+} 
+
+/* --- DARK MODE --- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #181828;
+    color: #e5e7eb;
+  }
+  .header-bg.modern-header {
+    background: #10102a;
+    box-shadow: 0 2px 16px #00baff22;
+  }
+  .container {
+    background: none;
+  }
+  .about-section, .confession-card {
+    background: #23233a;
+    color: #e5e7eb;
+    box-shadow: 0 4px 32px #00baff11;
+  }
+  .confession-card h4, .about-section h3, .confession-cards-title, .group-name, .footer-title {
+    color: #fff;
+  }
+  .confession-link, .confession-btn {
+    background: linear-gradient(90deg, #00baff 0%, #4f8cff 100%);
+    color: #fff;
+  }
+  .confession-link:hover, .confession-btn:hover {
+    background: #fff;
+    color: #00baff;
+  }
+  .footer.modern-footer {
+    background: #181828;
+    color: #e5e7eb;
+    border-top: 1.5px solid #23233a;
+  }
+  .footer-copyright {
+    background: #181828;
+    color: #b3c2e0;
+    border-top: 1px solid #23233a;
+  }
+  .footer-links a {
+    color: #b3c2e0;
+  }
+  .footer-links a:hover {
+    color: #00baff;
+  }
+  .cursor-dot {
+    background: rgba(0,186,255,0.32);
+    box-shadow: 0 0 24px 8px #00baffcc;
+  }
+  .cursor-dot.cursor-hover {
+    background: #fff;
+    box-shadow: 0 0 40px 12px #00baffcc;
+  }
 } 
