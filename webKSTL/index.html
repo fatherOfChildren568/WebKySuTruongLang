@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Nhóm KSTL</title>
+  <title>Landing Page Nhóm Ký Sự Trường Làng</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 </head>
 <body>
-  <header class="header-bg modern-header">
+  <header class="header-bg modern-header" id="mainHeader">
     <div class="container header-flex">
       <div class="logo-group">
         <img src="assets/images/avatar.png" alt="Avatar nhóm" class="avatar-circle logo-avatar">
@@ -32,12 +33,12 @@
   </header>
   <main class="container main-content">
     <div class="container">
-      <section class="intro-section">
+      <section class="intro-section" data-aos="fade-up">
         <h2>Chào mừng bạn đến với nhóm Ký Sự Trường Làng!</h2>
         <p>Chúng tôi là cộng đồng nơi mọi người có thể chia sẻ tâm sự, bóc phốt vui vẻ hoặc xin lời khuyên một cách ẩn danh. 
           Hãy gửi bài viết cho chúng tôi qua nút <b>Gửi confession</b></p>
       </section>
-      <section class="about-section" id="about">
+      <section class="about-section" id="about" data-aos="fade-up">
         <h3>Về nhóm Ký Sự Trường Làng</h3>
         <ul>
           <li>Không gian chia sẻ, kết nối, và hỗ trợ lẫn nhau.</li>
@@ -46,28 +47,28 @@
         </ul>
       </section>
     </div>
-    <section class="confession-cards-section">
+    <section class="confession-cards-section" data-aos="fade-up">
       <h3 class="confession-cards-title">Gửi bài viết của bạn</h3>
       <div class="confession-cards-grid">
-        <div class="confession-card">
+        <div class="confession-card" data-aos="zoom-in">
           <div class="confession-icon" style="background:#a78bfa;"><span>💌</span></div>
           <h4>Tâm sự</h4>
           <p>Chia sẻ những cảm xúc, câu chuyện, trải nghiệm cá nhân hoặc điều bạn muốn giãi bày với cộng đồng một cách ẩn danh.</p>
           <a class="confession-link" href="https://forms.gle/your-form-tamsu" target="_blank">Gửi ngay</a>
         </div>
-        <div class="confession-card">
+        <div class="confession-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="confession-icon" style="background:#38bdf8;"><span>🕵️‍♂️</span></div>
           <h4>Bóc phốt</h4>
           <p>Phản ánh, góp ý, hoặc chia sẻ những điều chưa hài lòng, những câu chuyện vui buồn trong cuộc sống, học tập, công việc.</p>
           <a class="confession-link" href="https://forms.gle/your-form-bocphot" target="_blank">Gửi ngay</a>
         </div>
-        <div class="confession-card">
+        <div class="confession-card" data-aos="zoom-in" data-aos-delay="200">
           <div class="confession-icon" style="background:#fde68a;"><span>💡</span></div>
           <h4>Xin lời khuyên</h4>
           <p>Bạn đang băn khoăn, cần lời khuyên hoặc ý kiến từ cộng đồng? Hãy gửi câu hỏi, tình huống của bạn cho chúng tôi!</p>
           <a class="confession-link" href="https://forms.gle/your-form-xinloikhuyen" target="_blank">Gửi ngay</a>
         </div>
-        <div class="confession-card">
+        <div class="confession-card" data-aos="zoom-in" data-aos-delay="300">
           <div class="confession-icon" style="background:#34d399;"><span>📚</span></div>
           <h4>Khoá học</h4>
           <p>Khám phá các khoá học bổ ích do nhóm KSTL tổ chức, giúp bạn phát triển kỹ năng và kiến thức trong nhiều lĩnh vực.</p>
@@ -78,7 +79,7 @@
     <div class="container">
     </div>
   </main>
-  <footer class="footer modern-footer">
+  <footer class="footer modern-footer" data-aos="fade-up">
     <div class="footer-container">
       <div class="footer-col">
         <div class="footer-title">KSTL - Kết nối & Chia sẻ</div>
@@ -126,5 +127,25 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, duration: 800 });
+    // Smooth scroll for menu
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    // Header shadow on scroll
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', function() {
+      if(window.scrollY > 10) header.classList.add('sticky-shadow');
+      else header.classList.remove('sticky-shadow');
+    });
+  </script>
 </body>
 </html> 
