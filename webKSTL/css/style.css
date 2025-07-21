@@ -201,10 +201,6 @@ body {
   transition: transform 0.18s, box-shadow 0.18s;
   position: relative;
 }
-.confession-card:hover {
-  transform: translateY(-8px) scale(1.025);
-  box-shadow: 0 8px 40px #00baff22;
-}
 .confession-icon {
   width: 54px;
   height: 54px;
@@ -215,6 +211,22 @@ body {
   font-size: 2rem;
   margin-bottom: 18px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  transition: background 0.18s, transform 0.18s;
+}
+.confession-card:hover .confession-icon {
+  animation: icon-bounce 0.5s;
+  background: #00baff22 !important;
+  transform: scale(1.08) rotate(-6deg);
+}
+@keyframes icon-bounce {
+  0% { transform: scale(1) rotate(0); }
+  30% { transform: scale(1.15) rotate(-8deg); }
+  60% { transform: scale(0.95) rotate(6deg); }
+  100% { transform: scale(1.08) rotate(-6deg); }
+}
+.confession-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 12px 48px #00baff33;
 }
 .confession-card h4 {
   font-size: 1.25rem;
@@ -246,6 +258,21 @@ body {
   background: #fff;
   color: #00baff;
   box-shadow: 0 4px 24px #00baff44;
+}
+.confession-link, .confession-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.confession-link:hover, .confession-btn:hover {
+  animation: pulse 0.5s;
+  background: linear-gradient(90deg, #00baff 0%, #4f8cff 100%);
+  color: #fff;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 @media (max-width: 1100px) {
   .confession-cards-grid {
@@ -457,4 +484,33 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- CUSTOM CURSOR --- */
+.cursor-dot {
+  position: fixed;
+  left: 0; top: 0;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: rgba(0,186,255,0.18);
+  box-shadow: 0 0 16px 4px #00baff55;
+  pointer-events: none;
+  z-index: 9999;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+  mix-blend-mode: lighten;
+}
+.cursor-dot.cursor-hover {
+  background: rgba(0,186,255,0.32);
+  box-shadow: 0 0 32px 8px #00baffcc;
+  transform: scale(1.7);
+}
+.cursor-dot.cursor-click {
+  animation: cursor-ripple 0.25s;
+}
+@keyframes cursor-ripple {
+  0% { box-shadow: 0 0 32px 8px #00baffcc, 0 0 0 0 #00baff44; }
+  100% { box-shadow: 0 0 32px 8px #00baffcc, 0 0 0 18px #00baff00; }
+}
+@media (max-width: 900px) {
+  .cursor-dot { display: none; }
 } 
