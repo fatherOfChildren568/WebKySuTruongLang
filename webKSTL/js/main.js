@@ -68,4 +68,38 @@ if (confessionToggle && confessionDropdown) {
     cursor.classList.add('cursor-click');
     setTimeout(() => cursor.classList.remove('cursor-click'), 250);
   });
+})();
+
+// Ripple effect for mobile buttons
+(function() {
+  if (window.innerWidth > 900) return;
+  function createRipple(e) {
+    const btn = e.currentTarget;
+    let ripple = btn.querySelector('.ripple');
+    if (ripple) ripple.remove();
+    ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    btn.appendChild(ripple);
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left - size/2 + 'px';
+    ripple.style.top = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top - size/2 + 'px';
+    ripple.classList.add('ripple-animate');
+    setTimeout(() => ripple && ripple.remove(), 500);
+  }
+  document.querySelectorAll('.confession-btn, .confession-link, .featured-story-link').forEach(btn => {
+    btn.addEventListener('touchstart', createRipple, {passive: true});
+  });
+
+  // Card touch scale effect
+  function addTouchScale(selector) {
+    document.querySelectorAll(selector).forEach(card => {
+      card.addEventListener('touchstart', () => card.classList.add('touch-scale'), {passive: true});
+      card.addEventListener('touchend', () => card.classList.remove('touch-scale'));
+      card.addEventListener('touchcancel', () => card.classList.remove('touch-scale'));
+    });
+  }
+  addTouchScale('.confession-card');
+  addTouchScale('.featured-story-card');
 })(); 
