@@ -33,6 +33,9 @@ body {
   background: #0a063d;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header-flex {
   display: flex;
@@ -43,7 +46,14 @@ body {
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
 }
 .logo-avatar {
   width: 48px;
@@ -59,6 +69,16 @@ body {
   font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 1px;
+  line-height: 1.1;
+}
+.group-slogan {
+  display: block;
+  font-size: 1rem;
+  color: #b3c2e0;
+  margin-top: 2px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 .main-nav {
   display: flex;
@@ -259,6 +279,9 @@ body {
   color: #0a063d;
 }
 .intro-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
   font-size: 1.13rem;
   color: #222;
 }
