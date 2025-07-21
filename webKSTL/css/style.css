@@ -75,12 +75,13 @@ body {
 }
 .group-slogan {
   display: block;
-  font-size: 1rem;
+  font-size: 0.93rem;
   color: #b3c2e0;
   margin-top: 2px;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-align: left;
 }
 .main-nav {
   display: flex;
@@ -612,6 +613,12 @@ body {
   .confession-card p {
     color: #f3f6fa !important;
   }
+  .confession-card, .featured-story-card {
+    background: #23233a;
+    color: #f3f6fa;
+    border: 1.5px solid #23233a;
+    box-shadow: 0 4px 32px #a78bfa11;
+  }
 }
 
 /* --- FEATURED STORIES SECTION --- */
@@ -620,10 +627,16 @@ body {
   text-align: center;
 }
 .featured-stories-title {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #0a063d;
-  margin-bottom: 28px;
+  color: #7c3aed;
+  margin-bottom: 32px;
+  text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+  .featured-stories-title {
+    color: #fff;
+  }
 }
 .featured-stories-grid {
   display: flex;
@@ -692,45 +705,118 @@ body {
   text-decoration: underline;
 }
 @media (max-width: 1000px) {
-  .featured-stories-grid {
-    gap: 16px;
-  }
-  .confession-card, .featured-story-card {
-    width: 95vw;
-    min-width: 220px;
+  .confession-cards-grid, .featured-stories-grid {
+    max-width: 98vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 }
 @media (max-width: 700px) {
-  .featured-stories-grid {
-    flex-direction: column;
-    align-items: center;
+  .confession-cards-grid, .featured-stories-grid {
+    display: block !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   .confession-card, .featured-story-card {
-    width: 98vw;
-    max-width: 99vw;
-    padding: 18px 4vw 16px 4vw;
+    display: block !important;
+    width: 92vw !important;
+    max-width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+    box-sizing: border-box;
   }
 }
+
+@media (max-width: 900px) {
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(124,58,237,0.18);
+    transform: scale(0);
+    animation: ripple-mobile 0.5s linear;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.7;
+  }
+  @keyframes ripple-mobile {
+    to {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+  .confession-btn, .confession-link, .featured-story-link {
+    position: relative;
+    overflow: hidden;
+    touch-action: manipulation;
+  }
+  .confession-card.touch-scale, .featured-story-card.touch-scale {
+    transform: scale(1.03);
+    box-shadow: 0 8px 40px #a78bfa55;
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+} 
+
+.about-section {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  .about-section {
+    max-width: 400px;
+    width: 92vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+} 
+
 @media (prefers-color-scheme: dark) {
-  .confession-card, .featured-story-card {
-    background: #23233a;
-    color: #f3f6fa;
-    border: 1.5px solid #23233a;
-    box-shadow: 0 4px 32px #a78bfa11;
+  .featured-story-card {
+    background: #23233a !important;
+    color: #fff !important;
+    border: 1.5px solid #23233a !important;
+    box-shadow: 0 4px 32px #a78bfa11 !important;
   }
-  .confession-card p, .featured-story-text, .featured-story-content {
-    color: #f3f6fa;
+  .featured-story-card *,
+  .featured-story-card .featured-story-text,
+  .featured-story-card .featured-story-content,
+  .featured-story-card .featured-story-date,
+  .featured-story-card .featured-story-link {
+    color: #fff !important;
   }
-  .featured-stories-title {
-    color: #fff;
+} 
+
+@media (max-width: 700px) {
+  .intro-section, .intro-section h2, .intro-section p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
-  .featured-story-date {
-    color: #ffe650;
+} 
+
+@media (max-width: 700px) {
+  .header-bg.modern-header {
+    width: 100% !important;
+    min-width: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    left: unset !important;
+    right: unset !important;
+    position: sticky !important;
+    top: 0 !important;
   }
-  .featured-story-link {
-    color: #ffe650;
-  }
-  .featured-story-link:hover {
-    color: #00baff;
+  .container.header-flex {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
   }
 } 
