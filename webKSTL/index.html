@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Nhóm KSTL</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header-bg modern-header">
+    <div class="container header-flex">
+      <div class="logo-group">
+        <img src="assets/images/avatar.png" alt="Avatar nhóm" class="avatar-circle logo-avatar">
+        <span class="group-name">KSTL</span>
+      </div>
+      <nav class="main-nav">
+        <a href="#" class="nav-link active">Trang chủ</a>
+        <a href="#about" class="nav-link">Giới thiệu</a>
+        <a href="#contact" class="nav-link">Liên hệ</a>
+      </nav>
+      <div class="confession-dropdown">
+        <button class="confession-btn" id="confessionToggle">Gửi confession</button>
+        <div class="confession-menu" id="confessionMenu">
+          <button class="confession-item" onclick="window.open('https://forms.gle/your-form-tamsu', '_blank')">Tâm sự</button>
+          <button class="confession-item" onclick="window.open('https://forms.gle/your-form-bocphot', '_blank')">Bóc phốt</button>
+          <button class="confession-item" onclick="window.open('https://forms.gle/your-form-xinloikhuyen', '_blank')">Xin lời khuyên</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <div class="container">
+      <section class="intro-section">
+        <h2>Chào mừng bạn đến với nhóm KSTL!</h2>
+        <p>Chúng tôi là cộng đồng nơi mọi người có thể chia sẻ tâm sự, bóc phốt vui vẻ, hoặc xin lời khuyên một cách ẩn danh. Hãy gửi bài viết của bạn cho chúng tôi qua nút <b>Gửi confession</b> ở góc phải trên cùng!</p>
+      </section>
+      <section class="about-section" id="about">
+        <h3>Về nhóm KSTL</h3>
+        <ul>
+          <li>Không gian chia sẻ, kết nối, và hỗ trợ lẫn nhau.</li>
+          <li>Hoạt động: Đăng confession, giao lưu, chia sẻ kinh nghiệm.</li>
+          <li>Đảm bảo ẩn danh, tôn trọng và văn minh.</li>
+        </ul>
+      </section>
+    </div>
+    <section class="confession-cards-section">
+      <h3 class="confession-cards-title">Gửi bài viết của bạn</h3>
+      <div class="confession-cards-grid">
+        <div class="confession-card">
+          <div class="confession-icon" style="background:#a78bfa;"><span>💌</span></div>
+          <h4>Tâm sự</h4>
+          <p>Chia sẻ những cảm xúc, câu chuyện, trải nghiệm cá nhân hoặc điều bạn muốn giãi bày với cộng đồng một cách ẩn danh.</p>
+          <a class="confession-link" href="https://forms.gle/your-form-tamsu" target="_blank">Gửi ngay</a>
+        </div>
+        <div class="confession-card">
+          <div class="confession-icon" style="background:#38bdf8;"><span>🕵️‍♂️</span></div>
+          <h4>Bóc phốt</h4>
+          <p>Phản ánh, góp ý, hoặc chia sẻ những điều chưa hài lòng, những câu chuyện vui buồn trong cuộc sống, học tập, công việc.</p>
+          <a class="confession-link" href="https://forms.gle/your-form-bocphot" target="_blank">Gửi ngay</a>
+        </div>
+        <div class="confession-card">
+          <div class="confession-icon" style="background:#fde68a;"><span>💡</span></div>
+          <h4>Xin lời khuyên</h4>
+          <p>Bạn đang băn khoăn, cần lời khuyên hoặc ý kiến từ cộng đồng? Hãy gửi câu hỏi, tình huống của bạn cho chúng tôi!</p>
+          <a class="confession-link" href="https://forms.gle/your-form-xinloikhuyen" target="_blank">Gửi ngay</a>
+        </div>
+        <div class="confession-card">
+          <div class="confession-icon" style="background:#34d399;"><span>📚</span></div>
+          <h4>Khoá học</h4>
+          <p>Khám phá các khoá học bổ ích do nhóm KSTL tổ chức, giúp bạn phát triển kỹ năng và kiến thức trong nhiều lĩnh vực.</p>
+          <a class="confession-link" href="https://forms.gle/your-form-khoahoc" target="_blank">Xem ngay</a>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section class="contact-section" id="contact">
+        <h3>Liên hệ</h3>
+        <p>Email: <a href="mailto:kstl.group@email.com">kstl.group@email.com</a></p>
+        <p>Facebook: <a href="https://facebook.com/kstlgroup" target="_blank">facebook.com/kstlgroup</a></p>
+      </section>
+    </div>
+  </main>
+  <footer class="footer modern-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-title">KSTL - Kết nối & Chia sẻ</div>
+        <div class="footer-info">
+          <div><span class="footer-icon">📍</span> TP. Hà Nội</div>
+          <div><span class="footer-icon">✉️</span> <a href="mailto:kstl.group@email.com">kstl.group@email.com</a></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Về KSTL</div>
+        <ul class="footer-links">
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#confession">Hướng dẫn gửi confession</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Thông tin hữu ích</div>
+        <ul class="footer-links">
+          <li><a href="#">Đăng ký thành viên</a></li>
+          <li><a href="#">Danh sách khoá học</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+          <li><a href="#">Góc chia sẻ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Fanpage Facebook</div>
+        <div class="footer-fb">
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/profile.php?id=61578129197920&locale=vi_VN&tabs&width=240&height=120&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="240" height="120" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2024 Nhóm KSTL. All rights reserved.
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html> 

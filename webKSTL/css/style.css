@@ -1,0 +1,437 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f8fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- CONTAINER --- */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Xóa text-align: center khỏi các section nội dung */
+.intro-section,
+.about-section,
+.confession-cards-section,
+.members-section,
+.contact-section {
+}
+
+/* --- HEADER HIỆN ĐẠI --- */
+.header-bg.modern-header {
+  background: #0a063d;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 0;
+}
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  background: #eaeaea;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.group-name {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+.nav-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.08rem;
+  transition: color 0.18s;
+  position: relative;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: #00baff;
+}
+.nav-link.active::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  height: 2.5px;
+  background: #00baff;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+/* --- CONFESSION DROPDOWN --- */
+.confession-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.confession-btn {
+  background: #fff;
+  color: #0a063d;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  box-shadow: 0 0 32px 0 #00baff22;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  outline: none;
+}
+.confession-btn:hover, .confession-btn:focus {
+  background: #00baff;
+  color: #fff;
+  box-shadow: 0 0 32px 0 #00baff55;
+}
+.confession-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,186,255,0.13);
+  min-width: 180px;
+  z-index: 10;
+  flex-direction: column;
+  padding: 10px 0;
+  animation: fadeIn 0.18s;
+}
+.confession-dropdown.open .confession-menu {
+  display: flex;
+}
+.confession-item {
+  background: none;
+  border: none;
+  color: #0a063d;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border-radius: 0;
+}
+.confession-item:hover {
+  background: #00baff11;
+  color: #00baff;
+}
+
+/* --- CONFESSION CARDS SECTION --- */
+.confession-cards-section {
+  margin: 36px 0 32px 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+.confession-cards-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0a063d;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.confession-cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.confession-card {
+  background: #181828;
+  color: #fff;
+  border-radius: 22px;
+  box-shadow: 0 4px 32px rgba(10,6,61,0.08);
+  padding: 32px 28px 28px 28px;
+  width: 320px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+.confession-card:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 8px 40px #00baff22;
+}
+.confession-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.confession-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: left;
+}
+.confession-card p {
+  font-size: 1.05rem;
+  color: #e5e7eb;
+  margin-bottom: 18px;
+  text-align: left;
+}
+.confession-link {
+  display: inline-block;
+  background: #00baff;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 12px #00baff22;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  margin-top: auto;
+}
+.confession-link:hover {
+  background: #fff;
+  color: #00baff;
+  box-shadow: 0 4px 24px #00baff44;
+}
+@media (max-width: 1100px) {
+  .confession-cards-grid {
+    gap: 24px;
+  }
+}
+@media (max-width: 1050px) {
+  .confession-cards-grid {
+    flex-direction: column;
+    align-items: center;
+    max-width: 98vw;
+  }
+  .confession-card {
+    width: 98vw;
+    max-width: 99vw;
+    padding: 18px 4vw 16px 4vw;
+  }
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  margin-top: 38px;
+}
+.intro-section {
+  margin: 40px 0 24px 0;
+  text-align: center;
+}
+.intro-section h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #0a063d;
+}
+.intro-section p {
+  font-size: 1.13rem;
+  color: #222;
+}
+.about-section, .members-section, .contact-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-bottom: 32px;
+}
+.about-section h3, .members-section h3, .contact-section h3 {
+  color: #0a063d;
+  margin-bottom: 10px;
+}
+.about-section ul, .member-list {
+  list-style: disc inside;
+  padding-left: 10px;
+}
+.member-list li {
+  margin-bottom: 4px;
+}
+.contact-section a {
+  color: #00baff;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.contact-section a:hover {
+  color: #0a063d;
+  text-decoration: underline;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background: #0a063d;
+  color: #fff;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+/* --- FOOTER HIỆN ĐẠI --- */
+.footer.modern-footer {
+  background: #f4faff;
+  color: #0a063d;
+  padding: 48px 0 0 0;
+  margin-top: 40px;
+  font-size: 1.05rem;
+  border-top: 1.5px solid #e5e7eb;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 0 24px;
+}
+.footer-col {
+  flex: 1 1 220px;
+  min-width: 200px;
+  margin-bottom: 32px;
+}
+.footer-title {
+  font-weight: 700;
+  font-size: 1.13rem;
+  margin-bottom: 16px;
+  color: #0a063d;
+}
+.footer-info {
+  color: #222;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.footer-icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 8px;
+}
+.footer-links a {
+  color: #0a063d;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover {
+  color: #00baff;
+  text-decoration: underline;
+}
+.footer-fb {
+  margin-top: 8px;
+}
+.footer-fb iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px #00baff11;
+}
+.footer-copyright {
+  text-align: center;
+  color: #222;
+  font-size: 1rem;
+  padding: 18px 0 12px 0;
+  border-top: 1px solid #e5e7eb;
+  background: #f4faff;
+  margin-top: 12px;
+}
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 8vw;
+  }
+  .footer-col {
+    margin-bottom: 18px;
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .main-nav {
+    gap: 16px;
+  }
+  .header-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .confession-cards-grid {
+    gap: 16px;
+  }
+  .confession-card {
+    padding: 24px 10px 20px 10px;
+    width: 95vw;
+    min-width: 220px;
+  }
+}
+@media (max-width: 600px) {
+  .logo-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .group-name {
+    font-size: 1.1rem;
+  }
+  .main-nav {
+    gap: 8px;
+    font-size: 0.98rem;
+  }
+  .confession-btn {
+    padding: 10px 16px;
+    font-size: 0.98rem;
+  }
+  .about-section, .members-section, .contact-section {
+    padding: 14px 6px;
+  }
+  .confession-cards-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .confession-card {
+    width: 98vw;
+    max-width: 99vw;
+    padding: 18px 4vw 16px 4vw;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
